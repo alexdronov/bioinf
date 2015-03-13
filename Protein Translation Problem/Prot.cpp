@@ -16,7 +16,6 @@ void Prot::parser(string filename)
     else
         printf("Error: Unable to open file!\n");
     
-    //translation table in the form of a map
     map<string, string> rnatable;
 
     rnatable["UUU"] = "F";
@@ -84,17 +83,16 @@ void Prot::parser(string filename)
     rnatable["GGA"] = "G";
     rnatable["GGG"] = "G";
     
-    //reading the input file
     unsigned int i =0;
     while (i <= rnastring.length())
     {
         string prot;
-        //append the new protein
+
         prot.push_back(rnastring[i]);
         prot.push_back(rnastring[i+1]);
         prot.push_back(rnastring[i+2]);
         
-        //do not print the stop codon
+
         if (rnatable[prot] == "Stop")
             break;
         cout << rnatable[prot];
