@@ -11,13 +11,13 @@ void RabinKarpStringMatch(char *, char *, int);
 int main()
 {
 	char Text[100], Pattern[100];
-	int Number = 11; //Prime Number
+	int Number = 11;
 
 	setbuf(stdout, NULL);
 
-	printf("\nEnter Text String : ");
+	printf("\nString : ");
 	gets(Text);
-	printf("\nEnter Pattern String : ");
+	printf("\nPattern : ");
 	gets(Pattern);
 
 	RabinKarpStringMatch(Text,Pattern,Number);
@@ -42,7 +42,7 @@ void RabinKarpStringMatch(char *Text, char *Pattern, int Number)
 				if(Text[i+j] != Pattern[j])
 					break;
 			if(j == M)
-				printf("\nPattern Found at Position :  %d",i+1);
+				printf("\nPosition :  %d",i+1);
 		}
 		TempT =((d*(T - Text[i]*h)) + ((int)Text[i+M]));
 		T = TempT % Number;
